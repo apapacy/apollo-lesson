@@ -6,12 +6,10 @@ import Layout from './Layout';
 import AllUsers from './AllUsers';
 import TopPosts from './TopPosts';
 import NewPost from './NewPost';
+import Post from './Post';
 
 const client = new ApolloClient({
   uri: 'https://api.graph.cool/simple/v1/ciyz901en4j590185wkmexyex',
-  options:{
-    fetchPolicy: 'network-only',
-  }
 });
 
 const App = () => (
@@ -21,6 +19,7 @@ const App = () => (
           <Switch>
             <Route exact path='/' component={ AllUsers } />
             <Route exact path='/posts' component={ TopPosts } />
+            <Route exact path='/post/:postId' component={ Post } />
             <Route exact path='/user/:userId' component={ NewPost } />
           </Switch>
         </Layout>

@@ -20,9 +20,6 @@ const TopPosts = () => (
     fetchPolicy='network-only'
   >
     {({ loading, error, data }) => {
-      for (let key in arguments[0])
-      console.log(key, arguments[0][key]);
-      console.log('data', data)
       if (loading) return <p>Loading...</p>;
       if (error) return <p>Error :(</p>;
 
@@ -37,5 +34,4 @@ const TopPosts = () => (
   </Query>
 );
 
-
-export default TopPosts
+export default TopPosts;

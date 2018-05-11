@@ -46,4 +46,4 @@ const NewPost = (props) => (
   </Mutation>
 );
 
-export default NewPost
+export default NewPost;
