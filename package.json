@@ -5,6 +5,9 @@
   "dependencies": {
     "apollo-boost": "^0.1.6",
     "apollo-cache-inmemory": "^1.2.1",
+    "apollo-client": "^2.3.1",
+    "apollo-client-preset": "^1.0.8",
+    "apollo-link-http": "^1.5.4",
     "babel-loader": "*",
     "babel-plugin-dynamic-import-node": "*",
     "babel-plugin-react-transform": "*",
@@ -28,7 +31,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-server": "NODE_ENV=production webpack --config=./server.webpack.js --mode=production",
+    "build-server": "NODE_ENV=production webpack --config=./server.webpack.js --mode=production && rm -f build/index.html",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
