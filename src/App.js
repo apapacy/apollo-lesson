@@ -12,9 +12,15 @@ import Post from './Post';
 const client = new ApolloClient({
   uri: 'https://api.graph.cool/simple/v1/ciyz901en4j590185wkmexyex',
   cache: new InMemoryCache().restore(window.__PRELOADED_STATE__),
+  defaultOptions: {
+    query: {
+      fetchPolicy: "cache-first",
+    },
+  },
+  ssrForceFetchDelay: 1000,
+  ssrCacheFirstFetchPolicyDuration: 1000,
 });
-console.log(window.__PRELOADED_STATE__);
-
+console.log(new InMemoryCache().restore(window.__PRELOADED_STATE__))
 const App = () => (
   <ApolloProvider client={client}>
       <BrowserRouter>

@@ -1,21 +1,17 @@
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { matchPath, StaticRouter, Switch, Route, } from 'react-router-dom';
+import { StaticRouter, Switch, Route, } from 'react-router-dom';
 import fetch from 'node-fetch';
 import { ApolloProvider, getDataFromTree, renderToStringWithData  } from 'react-apollo';
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from "apollo-cache-inmemory";
-
 import Layout from './Layout';
 import AllUsers from './AllUsers';
 import TopPosts from './TopPosts';
 import NewPost from './NewPost';
 import Post from './Post';
 import assets from '../build/asset-manifest.json';
-
-
-
 
 module.exports = async (req, res, next) => {
   const client = new ApolloClient({

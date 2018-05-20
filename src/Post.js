@@ -14,7 +14,6 @@ const Post = (props) => (
         }
       }
    `}
-    fetchPolicy='network-only'
   >
     {({ loading, error, data }) => {
       if (loading) return <p>Loading...</p>;
